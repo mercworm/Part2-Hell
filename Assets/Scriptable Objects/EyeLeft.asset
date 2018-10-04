@@ -9,8 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29bd814c99c7da24ea588d1e3e667283, type: 3}
-  m_Name: EyeType
+  m_Name: EyeLeft
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 0}
-  minTime: 0
-  maxTime: 0
+  objectPrefab:
+  - {fileID: 1733851437122394, guid: ab8e90b336555754fa150de0fc6fb9e5, type: 2}
+  - {fileID: 1744454498448480, guid: ea65c63a2adeca642be2d8716f7f3e87, type: 2}
+  - {fileID: 1521074297702396, guid: 4382f416850714b428a95e5b9eaaa858, type: 2}
+  minTime: 2
+  maxTime: 9
+  left: 1

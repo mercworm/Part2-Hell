@@ -4,8 +4,11 @@ using UnityEngine;
 
 [CreateAssetMenu]
 public class ObjectTypes : ScriptableObject {
-    public GameObject objectPrefab;
+
+    public GameObject [] objectPrefab;
 
     public float minTime;
     public float maxTime;
+
+    public bool left;
 }

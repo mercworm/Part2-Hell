@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class EyeBehaviour : MonoBehaviour {
 
+    private GameObject player;
+
 	// Use this for initialization
 	void Start () {
-		
+        player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        Vector2.MoveTowards(transform.position, player.transform.position, 50);
 	}
 }

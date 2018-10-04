@@ -22,6 +22,9 @@ GameObject:
   - component: {fileID: 212716322002537898}
   - component: {fileID: 61717291193733758}
   - component: {fileID: 61273083247664236}
+  - component: {fileID: 114873518228191964}
+  - component: {fileID: 114322539565987222}
+  - component: {fileID: 50944660998827588}
   m_Layer: 0
   m_Name: background
   m_TagString: Untagged
@@ -35,13 +38,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1961780640795068}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.71891856, y: 0.7078583, z: 0.7078583}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50944660998827588
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961780640795068}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61273083247664236
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -92,6 +115,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.7948666, y: 28.56}
   m_EdgeRadius: 0
+--- !u!114 &114322539565987222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961780640795068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a88d7c338862d429429f499bee18c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 1
+--- !u!114 &114873518228191964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961780640795068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ec471912750f04985f278a5360d655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundHeight: 20.1
 --- !u!212 &212716322002537898
 SpriteRenderer:
   m_ObjectHideFlags: 1
