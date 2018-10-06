@@ -9,6 +9,11 @@ public class SpawnManager : MonoBehaviour {
 
     public Transform eyeSpawnPointLeft, eyeSpawnPointRight;
 
+    private void Start()
+    {
+        Invoke("SpawnStart", 5f);
+    }
+
     public void SpawnStart()
     {
         //To spawn more different types, just add another invoke repeating, then add another corresponding void.
@@ -21,13 +26,13 @@ public class SpawnManager : MonoBehaviour {
     {
         //These both needs to be figured out when we have the screen done.
         var x = Random.Range(-3,3);
-        var y = 47.2f;
+        var y = -47.2f;
 
         Vector3 spawn = new Vector3(x, y, 0f);
         
         Instantiate(bubble.objectPrefab[0], spawn, Quaternion.identity);
 
-        InvokeRepeating("BubbleSpawn", Random.Range(2, 5), Random.Range(bubble.minTime, bubble.maxTime));
+        InvokeRepeating("BubbleSpawn", Random.Range(bubble.minTime, bubble.maxTime), Random.Range(bubble.minTime, bubble.maxTime));
     }
 
     //Ok, so first we have to randomize if it's going to spawn a left or right eye.

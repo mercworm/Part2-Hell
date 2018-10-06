@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class BeatAnimations : MonoBehaviour {
 
-    private Animator anim;
-
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
+    public Animator anim;
+    public string animName;
 
     public void ToTheBeat ()
     {
-        //trigger the animation for the beat.
+        anim.SetTrigger(animName);
     }
 }

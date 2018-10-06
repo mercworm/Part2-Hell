@@ -27,10 +27,10 @@ public class GameManager : MonoBehaviour {
 	void Update ()
     {
         deltaTime = GetComponent<AudioSource>().time - lastTime;
-
+        
         everyBeatTimer += deltaTime;
         doubleBeatTimer += deltaTime;
-
+        
         if(everyBeatTimer >= (60f/bpm))
         {
             OnBeat.Invoke();
@@ -41,7 +41,25 @@ public class GameManager : MonoBehaviour {
             OnDoubleBeat.Invoke();
             doubleBeatTimer -= (120f / bpm);
         }
-
+        
         lastTime = GetComponent<AudioSource>().time;
 	}
+
+    private void OnGUI()
+    {
+        if (GUI.Button(new Rect(10, 10, 40, 40), "Every beat"))
+        {
+            OnBeat.Invoke();
+        }
+
+        if (GUI.Button(new Rect(10, 30, 40, 40), "Double"))
+        {
+            OnDoubleBeat.Invoke();
+        }
+
+        if(GUI.Button(new Rect(10, 50, 40, 40), "Increase"))
+        {
+            OnIntensityIncrease.Invoke();
+        }
+    }
 }
