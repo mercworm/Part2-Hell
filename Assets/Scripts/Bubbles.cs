@@ -11,11 +11,16 @@ public class Bubbles : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag ("Player") || other.gameObject.CompareTag("Tooth"))
         {
             StartCoroutine(Pop());
+        }
+
+        if(other.gameObject.CompareTag("KillZone"))
+        {
+            Destroy(gameObject);
         }
     }
 

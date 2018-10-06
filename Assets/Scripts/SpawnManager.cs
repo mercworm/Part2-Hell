@@ -9,9 +9,24 @@ public class SpawnManager : MonoBehaviour {
 
     public Transform eyeSpawnPointLeft, eyeSpawnPointRight;
 
+    private float countdown; //this is an ugly fix, but what can you do.
+
     private void Start()
     {
         Invoke("SpawnStart", 5f);
+        countdown = 0;
+    }
+
+    private void Update()
+    {
+        countdown += Time.deltaTime;
+        if(countdown >= 20)
+        {
+            countdown = 0;
+            CancelInvoke();
+            Invoke("SpawnStart", 0f);
+        }
+
     }
 
     public void SpawnStart()
@@ -26,7 +41,7 @@ public class SpawnManager : MonoBehaviour {
     {
         //These both needs to be figured out when we have the screen done.
         var x = Random.Range(-3,3);
-        var y = -47.2f;
+        var y = -54.2f;
 
         Vector3 spawn = new Vector3(x, y, 0f);
         

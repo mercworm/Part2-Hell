@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: BubbleType
   m_EditorClassIdentifier: 
   objectPrefab:
-  - {fileID: 1198414802090768, guid: 6b49334b899c0ac4ab6f2edad9aa6d16, type: 2}
+  - {fileID: 1101530422632588, guid: 24741db0dd1f40b41979d724187ebef9, type: 2}
   minTime: 5
   maxTime: 10
   left: 0

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CameraSpin : MonoBehaviour
 {
-    public GameObject player;
+    public GameObject player, cameraObj;
     public bool rotation = false;
+
+    public static float spinTime;
 
     public float degreesPerSecond;
 
@@ -14,8 +16,14 @@ public class CameraSpin : MonoBehaviour
         if (rotation)
         {
             //Rotates the player. 
-            player.transform.Rotate(Vector3.up * degreesPerSecond * Time.deltaTime);
+            player.transform.Rotate(Vector3.forward * degreesPerSecond * Time.deltaTime);
+            cameraObj.transform.Rotate(Vector3.forward * degreesPerSecond * Time.deltaTime);
         }
+    }
+
+    public void StartSpin ()
+    {
+        StartCoroutine(Spin());
     }
 
     //Corutine that triggers the spin.
@@ -25,7 +33,7 @@ public class CameraSpin : MonoBehaviour
         //Trigger animation that fades in vignette image. 
         yield return new WaitForSeconds (2); //until the animation is done.
         rotation = true;
-        //yield return new WaitForSeconds ( until the player is done spinning );
+        yield return new WaitForSeconds (spinTime);
         StopSpin();
         //Trigger animation that fades out vignette image. 
     }

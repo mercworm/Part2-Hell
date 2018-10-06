@@ -13,6 +13,6 @@ public class EyeBehaviour : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-	}
+        transform.right = player.transform.position - transform.position;
+    }
 }
