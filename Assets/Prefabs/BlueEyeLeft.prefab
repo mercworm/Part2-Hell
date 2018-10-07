@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 114322998153938530}
   m_Layer: 0
   m_Name: BlueEyeLeft
-  m_TagString: Untagged
+  m_TagString: Eye
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,7 +255,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: eb08d931da1f21445908906bfd238a84, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1

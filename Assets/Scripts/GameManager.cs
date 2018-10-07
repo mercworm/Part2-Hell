@@ -34,11 +34,16 @@ public class GameManager : MonoBehaviour {
         if(everyBeatTimer >= (60f/bpm))
         {
             OnBeat.Invoke();
+            EventManager.TriggerEvent("OnBeat");
+            Debug.Log("Beat");
+
             everyBeatTimer -= (60f / bpm);
         }
         if(doubleBeatTimer >= (120f/bpm))
         {
             OnDoubleBeat.Invoke();
+            EventManager.TriggerEvent("OnDoubleBeat");
+            Debug.Log("Double Beat");
             doubleBeatTimer -= (120f / bpm);
         }
         

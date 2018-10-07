@@ -8,6 +8,7 @@ TagManager:
   - Bubble
   - Tooth
   - KillZone
+  - Eye
   layers:
   - Default
   - TransparentFX

@@ -329,6 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1406726424}
+  - component: {fileID: 1406726428}
   - component: {fileID: 1406726423}
   - component: {fileID: 1406726426}
   - component: {fileID: 1406726427}
@@ -359,35 +360,12 @@ MonoBehaviour:
   source: {fileID: 1406726425}
   OnBeat:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114830988774600132, guid: b71182248f57c4b44bea1c8aa981bbe9,
-          type: 2}
-        m_MethodName: ToTheBeat
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: GameManager+BeatEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnDoubleBeat:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ToTheBeat
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: GameManager+BeatEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   OnIntensityIncrease:
@@ -547,6 +525,17 @@ MonoBehaviour:
   cameraObj: {fileID: 1559694952}
   rotation: 0
   degreesPerSecond: 5
+--- !u!114 &1406726428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1406726422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9f5e7bf5342564ba47428ceb8dd538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1496955936
 GameObject:
   m_ObjectHideFlags: 0

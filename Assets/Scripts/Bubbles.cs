@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class Bubbles : MonoBehaviour {
 
-    private Animator anim;
-
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag ("Player") || other.gameObject.CompareTag("Tooth"))
@@ -27,13 +20,9 @@ public class Bubbles : MonoBehaviour {
     public IEnumerator Pop ()
     {
         //play pop particle effect
-        var rend = GetComponent<SpriteRenderer>();
+        var rend = GetComponentInChildren<SpriteRenderer>();
+        rend.enabled = false;
         yield return new WaitForEndOfFrame();
         Destroy(gameObject);
-    }
-
-    public void ToTheBeat ()
-    {
-        //triggers animation doing the pulsating
     }
 }
