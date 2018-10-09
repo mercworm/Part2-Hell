@@ -7,7 +7,7 @@ public class CameraSpin : MonoBehaviour
     public GameObject player, cameraObj;
     public bool rotation = false;
 
-    public static float spinTime;
+    public float spinTime;
 
     public float degreesPerSecond;
 

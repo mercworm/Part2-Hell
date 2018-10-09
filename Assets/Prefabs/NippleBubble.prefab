@@ -25,9 +25,10 @@ GameObject:
   - component: {fileID: 114472221468936352}
   - component: {fileID: 114492593915930200}
   - component: {fileID: 114580992516186322}
-  - component: {fileID: 114661365863314884}
+  - component: {fileID: 114000360281874158}
+  - component: {fileID: 114313321317474052}
   m_Layer: 0
-  m_Name: BubblePrefab
+  m_Name: NippleBubble
   m_TagString: Bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,9 +109,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.022714078, y: -0.06814265}
+  m_Offset: {x: 0.045428276, y: -0.10221386}
   serializedVersion: 2
-  m_Radius: 0.88614124
+  m_Radius: 0.82935596
 --- !u!95 &95125100611821210
 Animator:
   serializedVersion: 3
@@ -120,22 +121,44 @@ Animator:
   m_GameObject: {fileID: 1101530422632588}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: de3c2b5b5fb55d749ae6c4f29a9afe72, type: 2}
+  m_Controller: {fileID: 9100000, guid: 356d678b86806714f9037ed904193198, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114472221468936352
+--- !u!114 &114000360281874158
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101530422632588}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 107114cae467c42408f5bebb95bfe178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114313321317474052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1101530422632588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355766c622098cc4c9ff18bafe57af52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114472221468936352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1101530422632588}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68a88d7c338862d429429f499bee18c8, type: 3}
   m_Name: 
@@ -158,24 +181,13 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101530422632588}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09c246de863be194ab9d66a78b7a2f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95125100611821210}
-  animName: BubblePulse
---- !u!114 &114661365863314884
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1101530422632588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355766c622098cc4c9ff18bafe57af52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  animName: BubblePulse_Nipple
 --- !u!212 &212211276014719676
 SpriteRenderer:
   m_ObjectHideFlags: 1

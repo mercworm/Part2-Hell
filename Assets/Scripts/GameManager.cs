@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
     public BeatEvents OnDoubleBeat;
     public BeatEvents OnIntensityIncrease;
 
+    private bool intensity = true;
+
     void Start ()
     {
         lastTime = 0f;
@@ -48,6 +50,11 @@ public class GameManager : MonoBehaviour {
         }
         
         lastTime = GetComponent<AudioSource>().time;
+
+        if(lastTime >= 122f && intensity)
+        {
+            OnIntensityIncrease.Invoke();
+        }
 	}
 
     private void OnGUI()

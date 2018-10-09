@@ -308,7 +308,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.000019550323, y: -15.444742}
+  m_Offset: {x: -0.39859104, y: -49.8266}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -319,7 +319,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.116005, y: 1.1265831}
+  m_Size: {x: 59.978897, y: 1.3259583}
   m_EdgeRadius: 0
 --- !u!1 &1406726422
 GameObject:
@@ -505,9 +505,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble: {fileID: 11400000, guid: 516fbdf7a4ed8df49a73ae8ce3da7e1c, type: 2}
+  nipple: {fileID: 11400000, guid: dcab6829a1f365641ad860e69cfd35ca, type: 2}
   eye:
   - {fileID: 11400000, guid: c3d47499a409f2546ba2a182d6827f08, type: 2}
   - {fileID: 11400000, guid: 49c1ce7b5f3aa1d4d8d240561c1b4e61, type: 2}
+  acidObj: {fileID: 1825909247126408, guid: 06efb56e64fb029498bc13e73fc0f615, type: 2}
   eyeSpawnPointLeft: {fileID: 143504934}
   eyeSpawnPointRight: {fileID: 2025293158}
 --- !u!114 &1406726427
@@ -524,6 +526,7 @@ MonoBehaviour:
   player: {fileID: 615539743}
   cameraObj: {fileID: 1559694952}
   rotation: 0
+  spinTime: 18
   degreesPerSecond: 5
 --- !u!114 &1406726428
 MonoBehaviour:
@@ -786,9 +789,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 4388723937974972, guid: c9ae122015897ca45827c15e3cbaf560, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
+    - target: {fileID: 212852352170867298, guid: c9ae122015897ca45827c15e3cbaf560,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9ae122015897ca45827c15e3cbaf560, type: 2}

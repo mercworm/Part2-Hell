@@ -51,10 +51,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4997980338930620}
+  - component: {fileID: 50895025182234606}
+  - component: {fileID: 58119982633077276}
   - component: {fileID: 95962993210615710}
   - component: {fileID: 114296809931677404}
-  - component: {fileID: 50895025182234606}
   - component: {fileID: 114275389271846100}
+  - component: {fileID: 114213669075759054}
   m_Layer: 0
   m_Name: RedEye
   m_TagString: Eye
@@ -243,6 +245,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!58 &58119982633077276
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202582594280846}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0063398164, y: 0.028529689}
+  serializedVersion: 2
+  m_Radius: 0.097414404
 --- !u!95 &95962993210615710
 Animator:
   serializedVersion: 3
@@ -261,6 +278,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114213669075759054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202582594280846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355766c622098cc4c9ff18bafe57af52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114275389271846100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -469,7 +497,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 2e60b67c8313ec646b89bb2998a84782, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -515,7 +543,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 6c74486f123001a4f9348edbdf8d0e7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

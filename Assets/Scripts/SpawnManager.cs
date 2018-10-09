@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
 
-    public ObjectTypes bubble;
+    public ObjectTypes bubble, nipple;
     public ObjectTypes[] eye;
+    public GameObject acidObj;
 
     public Transform eyeSpawnPointLeft, eyeSpawnPointRight;
 
@@ -35,6 +36,10 @@ public class SpawnManager : MonoBehaviour {
         InvokeRepeating("BubbleSpawn", 0f, Random.Range(bubble.minTime, bubble.maxTime));
 
         InvokeRepeating("EyeSpawn", 0f, Random.Range(eye[0].minTime, eye[0].maxTime));
+
+        InvokeRepeating("NippleSpawn", 0f, Random.Range(nipple.minTime, nipple.maxTime));
+
+        InvokeRepeating("AcidSpawn", 0f, 40f);
     }
 
     public void BubbleSpawn ()
@@ -66,5 +71,22 @@ public class SpawnManager : MonoBehaviour {
         {
             Instantiate(eye[eyeRotation].objectPrefab[randomEye], eyeSpawnPointRight);
         }
+    }
+
+    public void NippleSpawn ()
+    {
+        var x = Random.Range(-3, 3);
+        var y = -54.2f;
+
+        Vector3 spawn = new Vector3(x, y, 0f);
+
+        Instantiate(nipple.objectPrefab[0], spawn, Quaternion.identity);
+    }
+
+    public void AcidSpawn ()
+    {
+        Vector3 spawn = new Vector3(0f, -60f, 0f);
+
+        Instantiate(acidObj, spawn, Quaternion.identity);
     }
 }

@@ -51,10 +51,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4152103894984410}
+  - component: {fileID: 50568792765950350}
+  - component: {fileID: 58489444229537968}
   - component: {fileID: 95846110348719496}
   - component: {fileID: 114442462278949568}
-  - component: {fileID: 50568792765950350}
   - component: {fileID: 114502270712951614}
+  - component: {fileID: 114608236463730010}
   m_Layer: 0
   m_Name: GreenEyeLeft
   m_TagString: Eye
@@ -243,6 +245,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!58 &58489444229537968
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744454498448480}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04913436, y: 0.028529665}
+  serializedVersion: 2
+  m_Radius: 0.09899944
 --- !u!95 &95846110348719496
 Animator:
   serializedVersion: 3
@@ -295,6 +312,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c5d02bde7ce6b949b27e65a0f28f5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114608236463730010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1744454498448480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355766c622098cc4c9ff18bafe57af52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212377468993146858
