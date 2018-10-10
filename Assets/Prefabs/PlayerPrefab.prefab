@@ -454,6 +454,10 @@ MonoBehaviour:
   toothPrefab: {fileID: 1727959566069820, guid: 5b3a87b52967ef144a292103a156bcf2,
     type: 2}
   spawnPoint: {fileID: 4388723937974972}
+  skinSwapWait: 1
+  bones: {fileID: 21300000, guid: 7f71b86d3ce8a2443904c798f1fac6b5, type: 3}
+  sketch: {fileID: 0}
+  normal: {fileID: 21300000, guid: ec2392a87663a2c44b28934b7ff7ccaf, type: 3}
 --- !u!212 &212852352170867298
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -488,7 +492,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: ec2392a87663a2c44b28934b7ff7ccaf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

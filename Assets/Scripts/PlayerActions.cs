@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour {
 
-    private Animator anim;
+    //private Animator anim;
     private Rigidbody2D rb2d;
+    private SpriteRenderer spriteRend;
 
     public float playerSpeed;
 
@@ -17,9 +18,17 @@ public class PlayerActions : MonoBehaviour {
     public GameObject toothPrefab;
     public Transform spawnPoint;
 
+    public float skinSwapWait;
+
+    public Sprite bones, sketch, normal;
+
+    private bool isSketch = false;
+
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
+
+        spriteRend = GetComponentInChildren<SpriteRenderer>();
 	}
 	
 	private void FixedUpdate()
@@ -72,8 +81,8 @@ public class PlayerActions : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Acid"))
         {
-            //trigger the animation "melting" the bones away.
             //start the particle effect making it look like the skin is disappearing.
+            StartCoroutine(SkinSwap(bones));
         }
     }
 
@@ -81,8 +90,26 @@ public class PlayerActions : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Acid"))
         {
-            //trigger the animation butting the character back together.
             //start the particle effect making it look like the skin goes back on the body.
+            if(isSketch)
+            {
+                StartCoroutine(SkinSwap(sketch));
+            }
+            else
+            {
+                StartCoroutine(SkinSwap(normal));
+            }
         }
+    }
+
+    public IEnumerator SkinSwap (Sprite changeTo)
+    {
+        yield return new WaitForSeconds(skinSwapWait);
+        spriteRend.sprite = changeTo;
+    }
+
+    public void SketchVersion ()
+    {
+        spriteRend.sprite = sketch;
     }
 }

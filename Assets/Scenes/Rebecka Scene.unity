@@ -229,15 +229,6 @@ Prefab:
       propertyPath: m_Name
       value: background (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1961780640795068, guid: dad13e6ef0eb84f45a572e118b2571f6, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114322539565987222, guid: dad13e6ef0eb84f45a572e118b2571f6,
-        type: 2}
-      propertyPath: scrollSpeed
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dad13e6ef0eb84f45a572e118b2571f6, type: 2}
   m_IsPrefabAsset: 0
@@ -283,7 +274,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.032741547, y: 15.420399}
+  m_Offset: {x: -0.032741547, y: 21.198406}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -294,7 +285,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.05455, y: 0.8035126}
+  m_Size: {x: 20.05455, y: 0.8034916}
   m_EdgeRadius: 0
 --- !u!61 &1099151828
 BoxCollider2D:
@@ -789,11 +780,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 212852352170867298, guid: c9ae122015897ca45827c15e3cbaf560,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9ae122015897ca45827c15e3cbaf560, type: 2}
   m_IsPrefabAsset: 0
@@ -863,20 +849,6 @@ Prefab:
     - target: {fileID: 4649237081782252, guid: dad13e6ef0eb84f45a572e118b2571f6, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114873518228191964, guid: dad13e6ef0eb84f45a572e118b2571f6,
-        type: 2}
-      propertyPath: backgroundHeight
-      value: -20.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1961780640795068, guid: dad13e6ef0eb84f45a572e118b2571f6, type: 2}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114322539565987222, guid: dad13e6ef0eb84f45a572e118b2571f6,
-        type: 2}
-      propertyPath: scrollSpeed
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dad13e6ef0eb84f45a572e118b2571f6, type: 2}
