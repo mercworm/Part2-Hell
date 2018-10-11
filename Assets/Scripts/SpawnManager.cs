@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour {
 
         InvokeRepeating("NippleSpawn", 0f, Random.Range(nipple.minTime, nipple.maxTime));
 
-        InvokeRepeating("AcidSpawn", 0f, 40f);
+        InvokeRepeating("AcidSpawn", 0f, 60f);
     }
 
     public void BubbleSpawn ()

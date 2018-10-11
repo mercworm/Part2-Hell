@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour {
 
     private bool intensity = true;
     public static bool sketch = false;
+    private bool end = true;
+
+    public GameObject blackscreen;
 
     void Start ()
     {
@@ -58,11 +61,21 @@ public class GameManager : MonoBehaviour {
             intensity = false;
         }
 
-        if(lastTime >= 50 && sketch == false)
+        if(lastTime >= 50f && sketch == false)
         {
             EventManager.TriggerEvent("SwitchToSketch");
             sketch = true;
             //Debug.Log("switching to sketch every update");
+        }
+        if(lastTime >= 80f && sketch == true)
+        {
+            sketch = false;
+        }
+
+        if(lastTime >= 206f && end)
+        {
+            end = false;
+            StartCoroutine(EndItAll());
         }
 	}
 
@@ -82,5 +95,12 @@ public class GameManager : MonoBehaviour {
         {
             OnIntensityIncrease.Invoke();
         }
+    }
+
+    public IEnumerator EndItAll ()
+    {
+        blackscreen.SetActive(true);
+        yield return new WaitForSeconds(2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
     }
 }
