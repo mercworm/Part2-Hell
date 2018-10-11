@@ -68,6 +68,12 @@ public class GameManager : MonoBehaviour {
             //Debug.Log("switching to sketch every update");
         }
 
+        if(lastTime >= 80f && sketch)
+        {
+            EventManager.TriggerEvent("SwitchBack");
+            sketch = false;
+        }
+
         if(lastTime >= 206f && end)
         {
             end = false;

@@ -10,10 +10,17 @@ public class SketchSwitch : MonoBehaviour {
     private void OnEnable()
     {
         EventManager.StartListening("SwitchToSketch", Switch);
+        EventManager.StartListening("SwitchBack", SwitchBack);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnDisable()
+    {
+        EventManager.StopListening("SwitchToSketch", Switch);
+        EventManager.StopListening("SwitchBack", SwitchBack);
+    }
+
+    // Update is called once per frame
+    void Update () {
 		if (GameManager.sketch && !switchDone)
         {
             Switch();
@@ -25,5 +32,11 @@ public class SketchSwitch : MonoBehaviour {
     {
         sketchVersion.SetActive(true);
         normalVersion.SetActive(false);
+    }
+
+    public void SwitchBack ()
+    {
+        sketchVersion.SetActive(false);
+        normalVersion.SetActive(true);
     }
 }

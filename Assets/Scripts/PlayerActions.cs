@@ -23,6 +23,9 @@ public class PlayerActions : MonoBehaviour {
     public Sprite bones, sketch, normal;
 
     private bool isSketch = false;
+    private bool inAcid = false;
+
+    public ParticleSystem switchToSketch, switchToFlesh;
 
 	void Start () {
         rb2d = GetComponent<Rigidbody2D>();
@@ -81,7 +84,8 @@ public class PlayerActions : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Acid"))
         {
-            //start the particle effect making it look like the skin is disappearing.
+            inAcid = true;
+            switchToSketch.Play();
             StartCoroutine(SkinSwap(bones));
         }
     }
@@ -90,8 +94,10 @@ public class PlayerActions : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Acid"))
         {
-            //start the particle effect making it look like the skin goes back on the body.
-            if(isSketch)
+            switchToFlesh.Play();
+            inAcid = false;
+
+            if (isSketch)
             {
                 StartCoroutine(SkinSwap(sketch));
             }
@@ -106,16 +112,32 @@ public class PlayerActions : MonoBehaviour {
     {
         yield return new WaitForSeconds(skinSwapWait);
         spriteRend.sprite = changeTo;
+
+        switchToSketch.Stop();
+        switchToFlesh.Stop();
     }
 
     public void SketchVersion ()
     {
-        spriteRend.sprite = sketch;
         isSketch = true;
+        if (!inAcid)
+        {
+            spriteRend.sprite = sketch;
+        }
+    }
+
+    public void FleshVersion ()
+    {
+        isSketch = false;
+        if (!inAcid)
+        {
+            spriteRend.sprite = normal;
+        }
     }
 
     private void OnEnable()
     {
         EventManager.StartListening("SwitchToSketch", SketchVersion);
+        EventManager.StartListening("SwitchBack", FleshVersion);
     }
 }
