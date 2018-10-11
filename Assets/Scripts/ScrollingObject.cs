@@ -6,7 +6,7 @@ public class ScrollingObject : MonoBehaviour {
 
     public float scrollSpeed;
 
-    private Rigidbody2D rb2d;
+    public Rigidbody2D rb2d;
 
 	// Use this for initialization
 	void Start () {

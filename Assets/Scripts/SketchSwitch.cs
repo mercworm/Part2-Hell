@@ -14,14 +14,19 @@ public class SketchSwitch : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (GameManager.sketch == true && switchDone == false)
+		if (GameManager.sketch && !switchDone)
         {
             Switch();
             switchDone = true;
         }
+        if(!GameManager.sketch)
+        {
+            sketchVersion.SetActive(false);
+            normalVersion.SetActive(true);
+        }
 	}
 
-    public void Switch ()
+    public void Switch()
     {
         sketchVersion.SetActive(true);
         normalVersion.SetActive(false);
