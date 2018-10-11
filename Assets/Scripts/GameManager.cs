@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
     public BeatEvents OnIntensityIncrease;
 
     private bool intensity = true;
+    public static bool sketch = false;
 
     void Start ()
     {
@@ -54,6 +55,14 @@ public class GameManager : MonoBehaviour {
         if(lastTime >= 122f && intensity)
         {
             OnIntensityIncrease.Invoke();
+            intensity = false;
+        }
+
+        if(lastTime >= 50 && sketch == false)
+        {
+            EventManager.TriggerEvent("SwitchToSketch");
+            sketch = true;
+            //Debug.Log("switching to sketch every update");
         }
 	}
 
