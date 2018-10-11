@@ -112,17 +112,10 @@ public class PlayerActions : MonoBehaviour {
     {
         spriteRend.sprite = sketch;
         isSketch = true;
-        StartCoroutine(Wait());
     }
 
     private void OnEnable()
     {
         EventManager.StartListening("SwitchToSketch", SketchVersion);
-    }
-
-    public IEnumerator Wait ()
-    {
-        yield return new WaitForSeconds(30);
-        isSketch = false;
     }
 }

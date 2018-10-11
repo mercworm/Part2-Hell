@@ -19,11 +19,6 @@ public class SketchSwitch : MonoBehaviour {
             Switch();
             switchDone = true;
         }
-        if(!GameManager.sketch)
-        {
-            sketchVersion.SetActive(false);
-            normalVersion.SetActive(true);
-        }
 	}
 
     public void Switch()
