@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95560664054692498}
-  animName: BubblePulse
+  animName: Pulse
 --- !u!198 &198184554382415768
 ParticleSystem:
   m_ObjectHideFlags: 1

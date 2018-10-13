@@ -35,6 +35,14 @@ public class MoviePlay : MonoBehaviour {
         Debug.Log("Video Over!");
         fadeIn.SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Scene");
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "IntroScene")
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Main Scene");
+        }
+        else
+        {
+            Application.Quit();
+            Debug.Log("Game is over!");
+        }
     }
 }
