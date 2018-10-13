@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class EyeBehaviour : MonoBehaviour {
 
-    private GameObject player;
+    public GameObject player;
 
-	// Use this for initialization
-	void Start () {
+    private void OnEnable()
+    {
         player = GameObject.FindGameObjectWithTag("Player");
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        transform.right = player.transform.position - transform.position;
+
+        if (player == null) player = GameObject.FindGameObjectWithTag("Player");
+
+        else transform.right = player.transform.position - transform.position;
+        
     }
 }

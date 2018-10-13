@@ -237,8 +237,6 @@ GameObject:
   - component: {fileID: 58631265658751388}
   - component: {fileID: 95851577374698316}
   - component: {fileID: 114546543433051436}
-  - component: {fileID: 114876907219307746}
-  - component: {fileID: 114397438406127096}
   m_Layer: 0
   m_Name: SketchEyeRight
   m_TagString: Eye
@@ -549,7 +547,7 @@ Animator:
   m_GameObject: {fileID: 1771763457281540}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eb08d931da1f21445908906bfd238a84, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3ae4c962e3d752e40ba294ab453b4e8f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -598,6 +596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5d02bde7ce6b949b27e65a0f28f5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114275389271846100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -610,6 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 2
+  rb2d: {fileID: 0}
 --- !u!114 &114296809931677404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -623,17 +623,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 95962993210615710}
   animName: EyeBeat
---- !u!114 &114397438406127096
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1771763457281540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355766c622098cc4c9ff18bafe57af52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114518875760820216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -645,6 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5d02bde7ce6b949b27e65a0f28f5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114546543433051436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -657,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95851577374698316}
-  animName: EyeBeat
+  animName: SketchBeat
 --- !u!114 &114604818840262326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -671,18 +661,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sketchVersion: {fileID: 1771763457281540}
   normalVersion: {fileID: 1798850670603606}
---- !u!114 &114876907219307746
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1771763457281540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a88d7c338862d429429f499bee18c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 2
 --- !u!212 &212008669020494904
 SpriteRenderer:
   m_ObjectHideFlags: 1

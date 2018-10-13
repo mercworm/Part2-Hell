@@ -20,7 +20,13 @@ public class GameManager : MonoBehaviour {
     public static bool sketch = false;
     private bool end = true;
 
+    public bool testSketch = false;
+
     public GameObject blackscreen;
+    public GameObject transitionScreen;
+
+    public AudioSource effectSource;
+    public AudioClip beepClip;
 
     void Start ()
     {
@@ -61,17 +67,21 @@ public class GameManager : MonoBehaviour {
             intensity = false;
         }
 
-        if(lastTime >= 50f && sketch == false)
+        if(lastTime >= 50f && lastTime <= 52f && !sketch)
         {
-            EventManager.TriggerEvent("SwitchToSketch");
+            StopAllCoroutines();
+            StartCoroutine(Transition("SwitchToSketch"));
             sketch = true;
+            testSketch = true;
             //Debug.Log("switching to sketch every update");
         }
 
-        if(lastTime >= 80f && sketch)
+        if(lastTime >= 80f && lastTime <= 82f && sketch)
         {
-            EventManager.TriggerEvent("SwitchBack");
+            StopAllCoroutines();
+            StartCoroutine(Transition("SwitchBack"));
             sketch = false;
+            testSketch = false;
         }
 
         if(lastTime >= 206f && end)
@@ -104,5 +114,16 @@ public class GameManager : MonoBehaviour {
         blackscreen.SetActive(true);
         yield return new WaitForSeconds(2);
         UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
+    }
+
+    public IEnumerator Transition (string triggerName)
+    {
+        transitionScreen.SetActive(true);
+        effectSource.clip = beepClip;
+        effectSource.Play();
+        yield return new WaitForSeconds(2);
+        EventManager.TriggerEvent(triggerName);
+        effectSource.Stop();
+        transitionScreen.SetActive(false);
     }
 }

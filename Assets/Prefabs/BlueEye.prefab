@@ -131,12 +131,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4403272782431186}
-  - component: {fileID: 50577548589114270}
-  - component: {fileID: 58510866189389296}
-  - component: {fileID: 95364691198729426}
-  - component: {fileID: 114468661104504266}
-  - component: {fileID: 114832358470758312}
-  - component: {fileID: 114730707804766862}
+  - component: {fileID: 95299802379611552}
+  - component: {fileID: 114902096719549144}
   m_Layer: 0
   m_Name: SketchEyeRight
   m_TagString: Eye
@@ -282,7 +278,7 @@ Transform:
   m_GameObject: {fileID: 1951121238791184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.036, y: -0.001, z: 0.025974724}
-  m_LocalScale: {x: 0.10309348, y: 0.10309348, z: 0.10309348}
+  m_LocalScale: {x: 0.10309348, y: 0.1030935, z: 0.1030935}
   m_Children: []
   m_Father: {fileID: 4698781892035090}
   m_RootOrder: 0
@@ -321,7 +317,7 @@ Transform:
   m_GameObject: {fileID: 1404074846293632}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.054, y: -0.001, z: 0.025974724}
-  m_LocalScale: {x: 0.10309348, y: 0.10309348, z: 0.10309348}
+  m_LocalScale: {x: 0.1030935, y: 0.1030935, z: 0.1030935}
   m_Children: []
   m_Father: {fileID: 4352073299503628}
   m_RootOrder: 0
@@ -490,26 +486,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!50 &50577548589114270
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554657574403702}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 5
 --- !u!58 &58103840630099872
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -525,22 +501,7 @@ CircleCollider2D:
   m_Offset: {x: 0.009527459, y: 0.030488195}
   serializedVersion: 2
   m_Radius: 0.10174855
---- !u!58 &58510866189389296
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554657574403702}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.009527459, y: 0.030488195}
-  serializedVersion: 2
-  m_Radius: 0.10174855
---- !u!95 &95364691198729426
+--- !u!95 &95299802379611552
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -549,10 +510,10 @@ Animator:
   m_GameObject: {fileID: 1554657574403702}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eb08d931da1f21445908906bfd238a84, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3ae4c962e3d752e40ba294ab453b4e8f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -587,19 +548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355766c622098cc4c9ff18bafe57af52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114468661104504266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554657574403702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09c246de863be194ab9d66a78b7a2f40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 95364691198729426}
-  animName: EyeBeat
 --- !u!114 &114515158845906548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -624,17 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5d02bde7ce6b949b27e65a0f28f5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114730707804766862
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1554657574403702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 355766c622098cc4c9ff18bafe57af52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114766402245287174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -647,6 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 2
+  rb2d: {fileID: 0}
 --- !u!114 &114826696879482372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -658,6 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5d02bde7ce6b949b27e65a0f28f5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114830988774600132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -671,7 +611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 95814092794152236}
   animName: EyeBeat
---- !u!114 &114832358470758312
+--- !u!114 &114902096719549144
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -679,10 +619,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1554657574403702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a88d7c338862d429429f499bee18c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 09c246de863be194ab9d66a78b7a2f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 2
+  anim: {fileID: 95299802379611552}
+  animName: SketchBeat
 --- !u!212 &212008338783777588
 SpriteRenderer:
   m_ObjectHideFlags: 1
