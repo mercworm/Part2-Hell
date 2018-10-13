@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bubbles : MonoBehaviour {
 
+    public ParticleSystem popParticle;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag ("Player") || other.gameObject.CompareTag("Tooth"))
@@ -19,10 +21,10 @@ public class Bubbles : MonoBehaviour {
 
     public IEnumerator Pop ()
     {
-        //play pop particle effect
+        popParticle.Play();
         var rend = GetComponentInChildren<SpriteRenderer>();
         rend.enabled = false;
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

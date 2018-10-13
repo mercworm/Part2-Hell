@@ -15,10 +15,12 @@ public class GameManager : MonoBehaviour {
     public BeatEvents OnBeat;
     public BeatEvents OnDoubleBeat;
     public BeatEvents OnIntensityIncrease;
+    public BeatEvents EndEvent;
 
     private bool intensity = true;
     public static bool sketch = false;
     private bool end = true;
+    private bool end2 = true;
 
     public bool testSketch = false;
 
@@ -82,6 +84,12 @@ public class GameManager : MonoBehaviour {
             StartCoroutine(Transition("SwitchBack"));
             sketch = false;
             testSketch = false;
+        }
+
+        if(lastTime >= 200f && end2)
+        {
+            end2 = false;
+            EndEvent.Invoke();
         }
 
         if(lastTime >= 206f && end)
