@@ -151,7 +151,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!60 &60218020795417198
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -5040,7 +5040,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 8dcef86e86a86e744b3a4b75a17d00ef, type: 2}
+  - {fileID: 2100000, guid: 722a2ede57cd86743b59fd2e3973f2f0, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

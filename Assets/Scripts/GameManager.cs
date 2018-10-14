@@ -99,24 +99,6 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
-    private void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 40, 40), "Every beat"))
-        {
-            OnBeat.Invoke();
-        }
-
-        if (GUI.Button(new Rect(10, 30, 40, 40), "Double"))
-        {
-            OnDoubleBeat.Invoke();
-        }
-
-        if(GUI.Button(new Rect(10, 50, 40, 40), "Increase"))
-        {
-            OnIntensityIncrease.Invoke();
-        }
-    }
-
     public IEnumerator EndItAll ()
     {
         blackscreen.SetActive(true);
