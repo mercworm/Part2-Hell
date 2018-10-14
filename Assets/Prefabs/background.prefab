@@ -607,7 +607,7 @@ Transform:
   m_GameObject: {fileID: 1961780640795068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.706, y: 0.706, z: 0.7}
+  m_LocalScale: {x: 0.706, y: 0.708, z: 0.7}
   m_Children:
   - {fileID: 4149343283136172}
   - {fileID: 4865109138329766}
@@ -793,6 +793,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sketchVersion: {fileID: 1544781279727100}
   normalVersion: {fileID: 1853972107123136}
+  bubbleSpriteRend: {fileID: 0}
+  bubbleOrig: {fileID: 0}
+  bubbleSketch: {fileID: 0}
 --- !u!114 &114322539565987222
 MonoBehaviour:
   m_ObjectHideFlags: 1

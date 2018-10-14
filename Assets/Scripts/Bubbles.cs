@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bubbles : MonoBehaviour {
 
     public ParticleSystem popParticle;
+    public Animator anim;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,7 +22,9 @@ public class Bubbles : MonoBehaviour {
 
     public IEnumerator Pop ()
     {
+        anim.SetTrigger("HitPlayer");
         popParticle.Play();
+        yield return new WaitForSeconds(0.2f);
         var rend = GetComponentInChildren<SpriteRenderer>();
         rend.enabled = false;
         yield return new WaitForSeconds(0.5f);

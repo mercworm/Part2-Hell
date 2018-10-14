@@ -7,6 +7,9 @@ public class SketchSwitch : MonoBehaviour {
     public GameObject sketchVersion, normalVersion;
     private bool switchDone = false;
 
+    public SpriteRenderer bubbleSpriteRend;
+    public Sprite bubbleOrig, bubbleSketch;
+
     private void OnEnable()
     {
         EventManager.StartListening("SwitchToSketch", Switch);
@@ -30,13 +33,27 @@ public class SketchSwitch : MonoBehaviour {
 
     public void Switch()
     {
-        sketchVersion.SetActive(true);
-        normalVersion.SetActive(false);
+        if (gameObject.tag == "Bubble")
+        {
+            bubbleSpriteRend.sprite = bubbleSketch;
+        }
+        else
+        {
+            sketchVersion.SetActive(true);
+            normalVersion.SetActive(false);
+        }
     }
 
     public void SwitchBack ()
     {
-        sketchVersion.SetActive(false);
-        normalVersion.SetActive(true);
+        if (gameObject.tag == "Bubble")
+        {
+            bubbleSpriteRend.sprite = bubbleOrig;
+        }
+        else
+        {
+            sketchVersion.SetActive(false);
+            normalVersion.SetActive(true);
+        }
     }
 }
