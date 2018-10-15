@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4970703495509704}
   - component: {fileID: 212898829390011624}
+  - component: {fileID: 95072110329080964}
   m_Layer: 0
   m_Name: Sketch
   m_TagString: Untagged
@@ -36,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4890090678187198}
   - component: {fileID: 212618123540250726}
+  - component: {fileID: 95959170128641854}
   m_Layer: 0
   m_Name: Tooth
   m_TagString: Tooth
@@ -57,7 +59,7 @@ GameObject:
   - component: {fileID: 114604367083395584}
   m_Layer: 0
   m_Name: ToothPrefab
-  m_TagString: Untagged
+  m_TagString: Tooth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,6 +140,42 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
+--- !u!95 &95072110329080964
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1030864447594018}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 600ee27244ec4d642a00cd25164131ed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95959170128641854
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1044358705696914}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2baf509be93a8794eaa05d4db4272021, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114067754876162636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,6 +200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sketchVersion: {fileID: 1030864447594018}
   normalVersion: {fileID: 1044358705696914}
+  bubbleSpriteRend: {fileID: 0}
+  bubbleOrig: {fileID: 0}
+  bubbleSketch: {fileID: 0}
 --- !u!212 &212618123540250726
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -244,7 +285,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: a76eba804404bb94d93d00cf596f2767, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3285228, g: 0.9811321, b: 0.23602703, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1101530422632588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.52, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4295517386270502}
@@ -227,6 +227,8 @@ MonoBehaviour:
   bubbleSpriteRend: {fileID: 212698647540931142}
   bubbleOrig: {fileID: 21300000, guid: df3ea942d70d7c74fa4d01dbf7564ee3, type: 3}
   bubbleSketch: {fileID: 21300000, guid: dea73926639882f4f88866cd649a17e0, type: 3}
+  origColor: {r: 1, g: 1, b: 1, a: 1}
+  sketchColor: {r: 1, g: 0.11792451, b: 0.88688505, a: 1}
 --- !u!198 &198184554382415768
 ParticleSystem:
   m_ObjectHideFlags: 1

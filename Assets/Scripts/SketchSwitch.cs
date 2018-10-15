@@ -9,6 +9,7 @@ public class SketchSwitch : MonoBehaviour {
 
     public SpriteRenderer bubbleSpriteRend;
     public Sprite bubbleOrig, bubbleSketch;
+    public Color origColor, sketchColor;
 
     private void OnEnable()
     {
@@ -36,6 +37,7 @@ public class SketchSwitch : MonoBehaviour {
         if (gameObject.tag == "Bubble")
         {
             bubbleSpriteRend.sprite = bubbleSketch;
+            bubbleSpriteRend.color = sketchColor;
         }
         else
         {
@@ -49,6 +51,7 @@ public class SketchSwitch : MonoBehaviour {
         if (gameObject.tag == "Bubble")
         {
             bubbleSpriteRend.sprite = bubbleOrig;
+            bubbleSpriteRend.color = origColor;
         }
         else
         {
