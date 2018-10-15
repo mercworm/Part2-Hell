@@ -12,6 +12,8 @@ public class SpawnManager : MonoBehaviour {
 
     private float countdown; //this is an ugly fix, but what can you do.
 
+    private bool handsCheck = false;
+
     private void Start()
     {
         Invoke("SpawnStart", 5f);
@@ -26,12 +28,14 @@ public class SpawnManager : MonoBehaviour {
             countdown = 0;
             CancelInvoke();
             Invoke("SpawnStart", 0f);
+            if(handsCheck) Invoke("HandSpawnStart", 0f);
         }
     }
 
     public void HandSpawnStart ()
     {
         InvokeRepeating("HandSpawn", 0f, Random.Range(hands[0].minTime, hands[0].maxTime));
+        handsCheck = true;
     }
 
     public void HandSpawnStop ()
