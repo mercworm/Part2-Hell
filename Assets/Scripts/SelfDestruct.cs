@@ -8,8 +8,22 @@ public class SelfDestruct : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Acid") || other.gameObject.CompareTag("KillZone"))
         {
-            Destroy(gameObject);
+            if(gameObject.tag == "Tooth")
+            {
+                StartCoroutine(ToothDeath());
+            }
+            else Destroy(gameObject);
         }
+    }
 
+    public ParticleSystem toothSystem;
+
+    public IEnumerator ToothDeath ()
+    {
+        toothSystem.Play();
+        var spriteRend = GetComponentInChildren<SpriteRenderer>();
+        spriteRend.enabled = false;
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
     }
 }
