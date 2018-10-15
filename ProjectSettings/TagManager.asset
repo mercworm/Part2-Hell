@@ -9,6 +9,7 @@ TagManager:
   - Tooth
   - KillZone
   - Eye
+  - Hands
   layers:
   - Default
   - TransparentFX

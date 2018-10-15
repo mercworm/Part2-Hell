@@ -5,10 +5,10 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour {
 
     public ObjectTypes bubble, nipple;
-    public ObjectTypes[] eye;
+    public ObjectTypes[] eye, hands;
     public GameObject acidObj;
 
-    public Transform eyeSpawnPointLeft, eyeSpawnPointRight;
+    public Transform eyeSpawnPointLeft, eyeSpawnPointRight, handSpawnLeft, handSpawnRight;
 
     private float countdown; //this is an ugly fix, but what can you do.
 
@@ -27,7 +27,29 @@ public class SpawnManager : MonoBehaviour {
             CancelInvoke();
             Invoke("SpawnStart", 0f);
         }
+    }
 
+    public void HandSpawnStart ()
+    {
+        InvokeRepeating("HandSpawn", 0f, Random.Range(hands[0].minTime, hands[0].maxTime));
+    }
+
+    public void HandSpawnStop ()
+    {
+        CancelInvoke("HandSpawn");
+    }
+
+    public void HandSpawn ()
+    {
+        var handRotation = Random.Range(0, hands.Length);
+        if (hands[handRotation].left)
+        {
+            Instantiate(hands[handRotation].objectPrefab[0], handSpawnLeft);
+        }
+        else
+        {
+            Instantiate(hands[handRotation].objectPrefab[0], handSpawnRight);
+        }
     }
 
     public void SpawnStart()
