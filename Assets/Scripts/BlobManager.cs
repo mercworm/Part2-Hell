@@ -5,6 +5,8 @@ using UnityEngine;
 public class BlobManager : MonoBehaviour {
 
     public float forceApplied;
+    public float torque;
+
     public bool left;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -15,10 +17,12 @@ public class BlobManager : MonoBehaviour {
             if (left)
             {
                 addForce.AddForce(new Vector2(forceApplied, 0), 0);
+                addForce.AddTorque(-torque);
             }
             else
             {
                 addForce.AddForce(new Vector2(-forceApplied, 0), 0);
+                addForce.AddTorque(torque);
             }
         }
     }

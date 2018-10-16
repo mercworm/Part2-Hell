@@ -11,7 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29bd814c99c7da24ea588d1e3e667283, type: 3}
   m_Name: BlobRight
   m_EditorClassIdentifier: 
-  objectPrefab: []
-  minTime: 0
-  maxTime: 0
+  objectPrefab:
+  - {fileID: 1945645394822066, guid: 3301cc7da570a394ba425bbb5e743e1f, type: 2}
+  minTime: 2
+  maxTime: 4
   left: 0

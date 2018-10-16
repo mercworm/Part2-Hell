@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceApplied: 1000
+  torque: 150
   left: 1
 --- !u!212 &212260112239019884
 SpriteRenderer:
