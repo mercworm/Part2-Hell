@@ -737,16 +737,6 @@ MonoBehaviour:
   everyBeatTimer: 0
   doubleBeatTimer: 0
   source: {fileID: 1406726425}
-  OnBeat:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: GameManager+BeatEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  OnDoubleBeat:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: GameManager+BeatEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
   OnIntensityIncrease:
     m_PersistentCalls:
       m_Calls:
@@ -772,6 +762,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1406726426}
+        m_MethodName: StopBlobSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: GameManager+BeatEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   EndEvent:
@@ -787,6 +788,33 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1406726426}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameManager+BeatEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  OnSketchEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1406726426}
+        m_MethodName: StartBlobSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: GameManager+BeatEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
@@ -924,6 +952,9 @@ MonoBehaviour:
   hands:
   - {fileID: 11400000, guid: 705050be92c282a4cb6d254aaa6a5fe7, type: 2}
   - {fileID: 11400000, guid: 47636162d61344442841499421e79139, type: 2}
+  blob:
+  - {fileID: 11400000, guid: 9c7e6beff20d9df479ed9943652698ba, type: 2}
+  - {fileID: 11400000, guid: e1947fa0da1e0a94a9f9ec7676a8f32c, type: 2}
   acidObj: {fileID: 1825909247126408, guid: 06efb56e64fb029498bc13e73fc0f615, type: 2}
   eyeSpawnPointLeft: {fileID: 143504934}
   eyeSpawnPointRight: {fileID: 2025293158}
@@ -1284,6 +1315,7 @@ GameObject:
   - component: {fileID: 1559694954}
   - component: {fileID: 1559694953}
   - component: {fileID: 1559694956}
+  - component: {fileID: 1559694957}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1363,6 +1395,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 872eb3dbc9b59c74783abc048ca8c7f7, type: 2}
+--- !u!114 &1559694957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559694952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b80b4dc1f1bb14586d7ed82d201709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTrans: {fileID: 1559694955}
+  shaking: 0
+  shakeAmount: 0.1
+  origPos: {x: 0, y: -40.2, z: -10}
 --- !u!1 &1793973709
 GameObject:
   m_ObjectHideFlags: 0

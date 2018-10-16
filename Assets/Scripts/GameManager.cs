@@ -12,10 +12,11 @@ public class GameManager : MonoBehaviour {
     [System.Serializable]
     public class BeatEvents : UnityEvent { }
     [SerializeField]
-    public BeatEvents OnBeat;
-    public BeatEvents OnDoubleBeat;
+    //public BeatEvents OnBeat;
+    //public BeatEvents OnDoubleBeat;
     public BeatEvents OnIntensityIncrease;
     public BeatEvents EndEvent;
+    public BeatEvents OnSketchEnd;
 
     private bool intensity = true;
     public static bool sketch = false;
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour {
         
         if(everyBeatTimer >= (60f/bpm))
         {
-            OnBeat.Invoke();
+            //OnBeat.Invoke();
             EventManager.TriggerEvent("OnBeat");
             Debug.Log("Beat");
 
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour {
         }
         if(doubleBeatTimer >= (120f/bpm))
         {
-            OnDoubleBeat.Invoke();
+            //OnDoubleBeat.Invoke();
             EventManager.TriggerEvent("OnDoubleBeat");
             Debug.Log("Double Beat");
             doubleBeatTimer -= (120f / bpm);
@@ -75,7 +76,6 @@ public class GameManager : MonoBehaviour {
             StartCoroutine(Transition("SwitchToSketch"));
             sketch = true;
             testSketch = true;
-            //Debug.Log("switching to sketch every update");
         }
 
         if(lastTime >= 80f && lastTime <= 82f && sketch)
@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour {
             StartCoroutine(Transition("SwitchBack"));
             sketch = false;
             testSketch = false;
+            OnSketchEnd.Invoke();
         }
 
         if(lastTime >= 200f && end2)

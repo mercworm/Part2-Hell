@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour {
 
     public ObjectTypes bubble, nipple;
-    public ObjectTypes[] eye, hands;
+    public ObjectTypes[] eye, hands, blob;
     public GameObject acidObj;
 
     public Transform eyeSpawnPointLeft, eyeSpawnPointRight, handSpawnLeft, handSpawnRight;
@@ -13,6 +13,7 @@ public class SpawnManager : MonoBehaviour {
     private float countdown; //this is an ugly fix, but what can you do.
 
     private bool handsCheck = false;
+    private bool blobCheck = false;
 
     private void Start()
     {
@@ -28,7 +29,8 @@ public class SpawnManager : MonoBehaviour {
             countdown = 0;
             CancelInvoke();
             Invoke("SpawnStart", 0f);
-            if(handsCheck) Invoke("HandSpawnStart", 0f);
+            if (handsCheck) Invoke("HandSpawnStart", 0f);
+            if (blobCheck) Invoke("StartBlobSpawn", 0f);
         }
     }
 
@@ -53,6 +55,31 @@ public class SpawnManager : MonoBehaviour {
         else
         {
             Instantiate(hands[handRotation].objectPrefab[0], handSpawnRight);
+        }
+    }
+
+    public void StartBlobSpawn ()
+    {
+        InvokeRepeating("BounceBlob", 0f, Random.Range(hands[0].minTime, hands[0].maxTime));
+        blobCheck = true;
+    }
+
+    public void StopBlobSpawn ()
+    {
+        CancelInvoke("BounceBlob");
+        blobCheck = false;
+    }
+
+    public void BounceBlob ()
+    {
+        var blobRotation = Random.Range(0, blob.Length);
+        if(blob[blobRotation].left)
+        {
+            Instantiate(blob[blobRotation].objectPrefab[0], handSpawnLeft);
+        }
+        else
+        {
+            Instantiate(blob[blobRotation].objectPrefab[0], handSpawnRight);
         }
     }
 

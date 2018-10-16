@@ -88,6 +88,11 @@ public class PlayerActions : MonoBehaviour {
             switchToSketch.Play();
             StartCoroutine(SkinSwap(bones));
         }
+
+        if(other.gameObject.CompareTag("Hands"))
+        {
+            EventManager.TriggerEvent("ShakeOn");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -105,6 +110,10 @@ public class PlayerActions : MonoBehaviour {
             {
                 StartCoroutine(SkinSwap(normal));
             }
+        }
+        if (other.gameObject.CompareTag("Hands"))
+        {
+            EventManager.TriggerEvent("ShakeOff");
         }
     }
 
