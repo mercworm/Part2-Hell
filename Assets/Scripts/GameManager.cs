@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour {
             OnSketchEnd.Invoke();
         }
 
-        if(lastTime >= 200f && end2)
+        if(lastTime >= 197f && end2)
         {
             end2 = false;
             EndEvent.Invoke();

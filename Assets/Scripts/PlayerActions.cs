@@ -93,6 +93,11 @@ public class PlayerActions : MonoBehaviour {
         {
             EventManager.TriggerEvent("ShakeOn");
         }
+
+        if(other.gameObject.CompareTag("Ass"))
+        {
+            spriteRend.sortingOrder = 15;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
