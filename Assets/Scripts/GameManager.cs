@@ -18,12 +18,14 @@ public class GameManager : MonoBehaviour {
     public BeatEvents EndEvent;
     public BeatEvents OnSketchEnd;
     public BeatEvents OnHeart;
+    public BeatEvents OnMouth;
 
     private bool intensity = true;
     public static bool sketch = false;
     private bool end = true;
     private bool end2 = true;
     private bool heart = true;
+    private bool mouth = true;
 
     public bool testSketch = false;
 
@@ -66,6 +68,11 @@ public class GameManager : MonoBehaviour {
         }
         
         lastTime = GetComponent<AudioSource>().time;
+
+        if(lastTime >= 20f && lastTime <= 22f && mouth)
+        {
+            OnMouth.Invoke();
+        }
 
         //Start the sketch-phase
         if(lastTime >= 40f && lastTime <= 42f && !sketch)

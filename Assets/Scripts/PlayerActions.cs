@@ -47,12 +47,8 @@ public class PlayerActions : MonoBehaviour {
 
             if(Input.GetKeyDown(KeyCode.F))
             {
-                mouthOpen = true;
-            }
-
-            if(Input.GetKeyUp(KeyCode.F))
-            {
-                mouthOpen = false;
+                if (!mouthOpen) mouthOpen = true;
+                else mouthOpen = false;
             }
         }
 
