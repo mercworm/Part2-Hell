@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefab:
   - {fileID: 1945645394822066, guid: 2cfa90b8f91c627449fb35dab088f741, type: 2}
-  minTime: 2
-  maxTime: 4
+  minTime: 0.5
+  maxTime: 1
   left: 1

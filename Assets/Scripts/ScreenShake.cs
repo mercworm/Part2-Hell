@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 
 public class ScreenShake : MonoBehaviour {
 
@@ -10,19 +11,32 @@ public class ScreenShake : MonoBehaviour {
 
     public Vector3 origPos;
 
+    public PostProcessingBehaviour postScript;
+    public PostProcessingProfile shake, normal;
+
     private void OnEnable()
     {
         EventManager.StartListening("ShakeOn", StartShake);
         EventManager.StartListening("ShakeOff", StopShake);
     }
-	
-	void Update () {
+
+    private void Start()
+    {
+        postScript = GetComponent<PostProcessingBehaviour>();
+    }
+
+    void Update () {
 
         if (shaking)
         {
             camTrans.localPosition = origPos + Random.insideUnitSphere * shakeAmount;
+            postScript.profile = shake;
         }
-        else if (!shaking) camTrans.localPosition = origPos;
+        else if (!shaking)
+        {
+            camTrans.localPosition = origPos;
+            postScript.profile = normal;
+        }
 	}
 
     public void StartShake ()

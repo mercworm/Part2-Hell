@@ -87,6 +87,7 @@ public class PlayerActions : MonoBehaviour {
             inAcid = true;
             switchToSketch.Play();
             StartCoroutine(SkinSwap(bones));
+            EventManager.TriggerEvent("InAcid");
         }
 
         if(other.gameObject.CompareTag("Hands"))
@@ -115,6 +116,7 @@ public class PlayerActions : MonoBehaviour {
             {
                 StartCoroutine(SkinSwap(normal));
             }
+            EventManager.TriggerEvent("OutAcid");
         }
         if (other.gameObject.CompareTag("Hands"))
         {

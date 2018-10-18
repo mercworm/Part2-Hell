@@ -22,6 +22,7 @@ public class Bubbles : MonoBehaviour {
 
     public IEnumerator Pop ()
     {
+        EventManager.TriggerEvent("BubblePop");
         anim.SetTrigger("HitPlayer");
         popParticle.Play();
         yield return new WaitForSeconds(0.2f);
