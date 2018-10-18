@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29bd814c99c7da24ea588d1e3e667283, type: 3}
+  m_Name: CogRight
+  m_EditorClassIdentifier: 
+  objectPrefab:
+  - {fileID: 1266485879359184, guid: 4c2dccb2902c9a94580de3ba62652a27, type: 2}
+  - {fileID: 1236320533126034, guid: 4f91f2a4ac175444c9542e689b469073, type: 2}
+  - {fileID: 1247797387651376, guid: 74ff4917f8450bf468b120dcc72ed7a0, type: 2}
+  minTime: 3
+  maxTime: 6
+  left: 0

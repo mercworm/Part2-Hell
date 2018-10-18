@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour {
 
     public ObjectTypes bubble, nipple;
-    public ObjectTypes[] eye, hands, blob;
+    public ObjectTypes[] eye, hands, blob, cog;
     public GameObject acidObj;
 
     public Transform eyeSpawnPointLeft, eyeSpawnPointRight, handSpawnLeft, handSpawnRight;
@@ -14,13 +14,15 @@ public class SpawnManager : MonoBehaviour {
 
     private bool handsCheck = false;
     private bool blobCheck = false;
+    private bool cogCheck = false;
 
     private void Start()
     {
-        Invoke("SpawnStart", 5f);
+        Invoke("SpawnStart", 4f);
         countdown = 0;
     }
 
+    //failsafe making sure that the screen isn't covered by bubbles and nipples
     private void Update()
     {
         countdown += Time.deltaTime;
@@ -31,9 +33,11 @@ public class SpawnManager : MonoBehaviour {
             Invoke("SpawnStart", 0f);
             if (handsCheck) Invoke("HandSpawnStart", 0f);
             if (blobCheck) Invoke("StartBlobSpawn", 0f);
+            if (cogCheck) Invoke("StartCogSpawn", 0f);
         }
     }
 
+    //start spawning hands when the spin begins
     public void HandSpawnStart ()
     {
         InvokeRepeating("HandSpawn", 0f, Random.Range(hands[0].minTime, hands[0].maxTime));
@@ -58,6 +62,7 @@ public class SpawnManager : MonoBehaviour {
         }
     }
 
+    //start spawning blisters after the sketch-phase
     public void StartBlobSpawn ()
     {
         InvokeRepeating("BounceBlob", 0f, Random.Range(hands[0].minTime, hands[0].maxTime));
@@ -83,6 +88,29 @@ public class SpawnManager : MonoBehaviour {
         }
     }
 
+    //start spawning cogs when the heart is activated
+    public void StartCogSpawn ()
+    {
+        InvokeRepeating("CogSpawn", 0f, Random.Range(cog[0].minTime, cog[0].maxTime));
+        cogCheck = true;
+    }
+
+    public void CogSpawn ()
+    {
+        var cogRotation = Random.Range(0, cog.Length);
+        var randomCog = Random.Range(0, cog[cogRotation].objectPrefab.Length);
+
+        if(cog[cogRotation].left)
+        {
+            Instantiate(cog[cogRotation].objectPrefab[randomCog], eyeSpawnPointLeft);
+        }
+        else
+        {
+            Instantiate(cog[cogRotation].objectPrefab[randomCog], eyeSpawnPointRight);
+        }
+    }
+
+    //start spawning everything else in the beginning
     public void SpawnStart()
     {
         //To spawn more different types, just add another invoke repeating, then add another corresponding void.

@@ -6,7 +6,7 @@ public class SelfDestruct : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Acid") || other.gameObject.CompareTag("KillZone"))
+        if (other.gameObject.CompareTag("Acid") || other.gameObject.CompareTag("KillZone") || other.gameObject.CompareTag("Heart"))
         {
             if(gameObject.tag == "Tooth")
             {

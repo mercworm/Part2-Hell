@@ -17,11 +17,13 @@ public class GameManager : MonoBehaviour {
     public BeatEvents OnIntensityIncrease;
     public BeatEvents EndEvent;
     public BeatEvents OnSketchEnd;
+    public BeatEvents OnHeart;
 
     private bool intensity = true;
     public static bool sketch = false;
     private bool end = true;
     private bool end2 = true;
+    private bool heart = true;
 
     public bool testSketch = false;
 
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour {
 
             everyBeatTimer -= (60f / bpm);
         }
+
         if(doubleBeatTimer >= (120f/bpm))
         {
             //OnDoubleBeat.Invoke();
@@ -64,13 +67,8 @@ public class GameManager : MonoBehaviour {
         
         lastTime = GetComponent<AudioSource>().time;
 
-        if(lastTime >= 122f && intensity)
-        {
-            OnIntensityIncrease.Invoke();
-            intensity = false;
-        }
-
-        if(lastTime >= 50f && lastTime <= 52f && !sketch)
+        //Start the sketch-phase
+        if(lastTime >= 40f && lastTime <= 42f && !sketch)
         {
             StopAllCoroutines();
             StartCoroutine(Transition("SwitchToSketch"));
@@ -78,7 +76,9 @@ public class GameManager : MonoBehaviour {
             testSketch = true;
         }
 
-        if(lastTime >= 80f && lastTime <= 82f && sketch)
+        //end the sketch-phase
+        //also start spawning blisters
+        if(lastTime >= 70f && lastTime <= 72f && sketch)
         {
             StopAllCoroutines();
             StartCoroutine(Transition("SwitchBack"));
@@ -87,12 +87,30 @@ public class GameManager : MonoBehaviour {
             OnSketchEnd.Invoke();
         }
 
-        if(lastTime >= 197f && end2)
+        //spawn the heart
+        if(lastTime >= 74 && lastTime <= 76f && heart)
+        {
+            //setactive the heart and make cogs start spawning
+            heart = false;
+            OnHeart.Invoke();
+        }
+
+        //start spin
+        //stop spawning blisters
+        if (lastTime >= 122f && intensity)
+        {
+            OnIntensityIncrease.Invoke();
+            intensity = false;
+        }
+
+        //spawn the worm butt
+        if (lastTime >= 197f && end2)
         {
             end2 = false;
             EndEvent.Invoke();
         }
 
+        //fade out
         if(lastTime >= 206f && end)
         {
             end = false;
