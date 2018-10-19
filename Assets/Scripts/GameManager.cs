@@ -126,12 +126,8 @@ public class GameManager : MonoBehaviour {
 
         //the following ifs takes care of spawning the acid, since we can no longer have that randomized
         //spawns 7 times during the game
-        if (lastTime >= 25f && lastTime <= 27f && acid)
-        {
-            Debug.Log("Acid Should Spawn");
-            StartCoroutine(AcidCheck());
-        }
-        else if (lastTime >= 45f && lastTime <= 47f && acid) StartCoroutine(AcidCheck());
+        //if (lastTime >= 25f && lastTime <= 27f && acid) StartCoroutine(AcidCheck());
+        if (lastTime >= 45f && lastTime <= 47f && acid) StartCoroutine(AcidCheck());
         else if (lastTime >= 56f && lastTime <= 57f && acid) StartCoroutine(AcidCheck());
         else if (lastTime >= 82f && lastTime <= 84f && acid) StartCoroutine(AcidCheck());
         else if (lastTime >= 140f && lastTime <= 142f && acid) StartCoroutine(AcidCheck());

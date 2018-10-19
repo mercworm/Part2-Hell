@@ -14,10 +14,15 @@ public class ScreenShake : MonoBehaviour {
     public PostProcessingBehaviour postScript;
     public PostProcessingProfile shake, normal;
 
+    private bool mouthShake = false;
+    public float shakeDuration;
+    public float decreaseFactor;
+
     private void OnEnable()
     {
         EventManager.StartListening("ShakeOn", StartShake);
         EventManager.StartListening("ShakeOff", StopShake);
+        EventManager.StartListening("OnMouthClose", MouthShake);
     }
 
     private void Start()
@@ -32,10 +37,25 @@ public class ScreenShake : MonoBehaviour {
             camTrans.localPosition = origPos + Random.insideUnitSphere * shakeAmount;
             postScript.profile = shake;
         }
-        else if (!shaking)
+        else if (!shaking && !mouthShake)
         {
             camTrans.localPosition = origPos;
             postScript.profile = normal;
+        }
+
+        if(mouthShake)
+        {
+            if (shakeDuration > 0)
+            {
+                camTrans.localPosition = origPos + Random.insideUnitSphere * shakeAmount;
+                shakeDuration -= Time.deltaTime * decreaseFactor;
+            }
+            else
+            {
+                shakeDuration = 0f;
+                camTrans.localPosition = origPos;
+                mouthShake = false;
+            }
         }
 	}
 
@@ -53,5 +73,11 @@ public class ScreenShake : MonoBehaviour {
     {
         EventManager.StopListening("ShakeOn", StartShake);
         EventManager.StopListening("ShakeOff", StopShake);
+    }
+
+    public void MouthShake ()
+    {
+        shakeDuration = .2f;
+        mouthShake = true;
     }
 }
