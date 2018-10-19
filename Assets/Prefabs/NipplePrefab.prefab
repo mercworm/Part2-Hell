@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4620566745652032}
   - component: {fileID: 50149356584908342}
-  - component: {fileID: 58926647907721866}
   - component: {fileID: 114809120490674694}
   - component: {fileID: 114664785150244270}
   - component: {fileID: 114542680615453346}
   - component: {fileID: 114848742054883584}
+  - component: {fileID: 60599816705881070}
   m_Layer: 0
   m_Name: NipplePrefab
   m_TagString: Untagged
@@ -125,8 +125,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58926647907721866
-CircleCollider2D:
+--- !u!60 &60599816705881070
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -138,8 +138,34 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.8475379, y: 0.7005062}
+      - {x: 0.66064626, y: 1.1405885}
+      - {x: 0.4347867, y: 1.3883665}
+      - {x: 0, y: 1.5312207}
+      - {x: -0.39216658, y: 1.3984044}
+      - {x: -0.6640829, y: 1.1251049}
+      - {x: -0.92638576, y: 0.7160323}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -0.9988278, y: -0.04521803}
+      - {x: -0.8768327, y: -0.6039695}
+      - {x: -0.79179615, y: -0.96669847}
+      - {x: -0.44391298, y: -1.3402375}
+      - {x: 0.023473203, y: -1.4308536}
+      - {x: 0.4031331, y: -1.2725645}
+      - {x: 0.676322, y: -0.98609036}
+      - {x: 1.0083845, y: -0.33115014}
+      - {x: 0.9510565, y: 0.30901712}
 --- !u!114 &114542680615453346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 355766c622098cc4c9ff18bafe57af52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toothSystem: {fileID: 0}
 --- !u!114 &114664785150244270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,6 +220,8 @@ MonoBehaviour:
   bubbleSpriteRend: {fileID: 0}
   bubbleOrig: {fileID: 0}
   bubbleSketch: {fileID: 0}
+  origColor: {r: 0, g: 0, b: 0, a: 0}
+  sketchColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &212594979307017836
 SpriteRenderer:
   m_ObjectHideFlags: 1

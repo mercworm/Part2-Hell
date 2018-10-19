@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour {
     public BeatEvents OnSketchEnd;
     public BeatEvents OnHeart;
     public BeatEvents OnMouth;
+    public BeatEvents OnAcid;
 
     private bool intensity = true;
     public static bool sketch = false;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour {
     private bool end2 = true;
     private bool heart = true;
     private bool mouth = true;
+    private bool acid = true;
 
     public bool testSketch = false;
 
@@ -69,23 +71,25 @@ public class GameManager : MonoBehaviour {
         
         lastTime = GetComponent<AudioSource>().time;
 
+        // the followin ifs checks for all the major events that will happen throughout the game using lastTime
+        //mouth, heart, skethc-phase, end, etc.
+        
+        //spawns the mouth
         if(lastTime >= 20f && lastTime <= 22f && mouth)
         {
             OnMouth.Invoke();
         }
-
         //Start the sketch-phase
-        if(lastTime >= 40f && lastTime <= 42f && !sketch)
+        else if(lastTime >= 40f && lastTime <= 42f && !sketch)
         {
             StopAllCoroutines();
             StartCoroutine(Transition("SwitchToSketch"));
             sketch = true;
             testSketch = true;
         }
-
         //end the sketch-phase
         //also start spawning blisters
-        if(lastTime >= 70f && lastTime <= 72f && sketch)
+        else if(lastTime >= 70f && lastTime <= 72f && sketch)
         {
             StopAllCoroutines();
             StartCoroutine(Transition("SwitchBack"));
@@ -93,37 +97,46 @@ public class GameManager : MonoBehaviour {
             testSketch = false;
             OnSketchEnd.Invoke();
         }
-
         //spawn the heart
-        if(lastTime >= 74 && lastTime <= 76f && heart)
+        else if(lastTime >= 74 && lastTime <= 76f && heart)
         {
             //setactive the heart and make cogs start spawning
             heart = false;
             OnHeart.Invoke();
         }
-
         //start spin
         //stop spawning blisters
-        if (lastTime >= 122f && intensity)
+        else if (lastTime >= 122f && intensity)
         {
             OnIntensityIncrease.Invoke();
             intensity = false;
         }
-
         //spawn the worm butt
-        if (lastTime >= 197f && end2)
+        else if (lastTime >= 197f && end2)
         {
             end2 = false;
             EndEvent.Invoke();
         }
-
         //fade out
-        if(lastTime >= 206f && end)
+        else if(lastTime >= 206f && end)
         {
             end = false;
             StartCoroutine(EndItAll());
         }
-	}
+
+        //the following ifs takes care of spawning the acid, since we can no longer have that randomized
+        //spawns 7 times during the game
+        if (lastTime >= 25f && lastTime <= 27f && acid)
+        {
+            Debug.Log("Acid Should Spawn");
+            StartCoroutine(AcidCheck());
+        }
+        else if (lastTime >= 45f && lastTime <= 47f && acid) StartCoroutine(AcidCheck());
+        else if (lastTime >= 56f && lastTime <= 57f && acid) StartCoroutine(AcidCheck());
+        else if (lastTime >= 82f && lastTime <= 84f && acid) StartCoroutine(AcidCheck());
+        else if (lastTime >= 140f && lastTime <= 142f && acid) StartCoroutine(AcidCheck());
+        else if (lastTime >= 170f && lastTime <= 172f && acid) StartCoroutine(AcidCheck());
+    }
 
     public IEnumerator EndItAll ()
     {
@@ -141,5 +154,13 @@ public class GameManager : MonoBehaviour {
         EventManager.TriggerEvent(triggerName);
         effectSource.Stop();
         transitionScreen.SetActive(false);
+    }
+
+    public IEnumerator AcidCheck ()
+    {
+        acid = false;
+        OnAcid.Invoke();
+        yield return new WaitForSeconds(2);
+        acid = true;
     }
 }

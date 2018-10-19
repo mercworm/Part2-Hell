@@ -984,7 +984,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 695562457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.43, y: 0.29, z: 0}
+  m_LocalPosition: {x: 0.47, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1177982322}
@@ -1818,7 +1818,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1177982321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 0.03999999, z: 0}
+  m_LocalPosition: {x: -0.08, y: 0.03999999, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 695562458}
@@ -2234,6 +2234,22 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: GameManager+BeatEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  OnAcid:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1406726426}
+        m_MethodName: AcidSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: GameManager+BeatEvents, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
   testSketch: 0
   blackscreen: {fileID: 1516070932}
   transitionScreen: {fileID: 636126005}
@@ -2517,7 +2533,7 @@ MonoBehaviour:
   playSource: {fileID: 1406726429}
   normalSource: {fileID: 1406726425}
   muffledSource: {fileID: 1406726431}
-  bubbleFizz: {fileID: 8300000, guid: 3884dffaabafd9c46b01b46f1bf233ad, type: 3}
+  bubbleFizz: {fileID: 8300000, guid: 764f3eb4a1f880a4491e716c60d5225e, type: 3}
   sizzle: {fileID: 8300000, guid: 5352165f482e3d94fad1c0e5ac8ea9cd, type: 3}
   splat: {fileID: 8300000, guid: 520cd8219ede9b645b1c3316fea58b70, type: 3}
   pop: {fileID: 8300000, guid: 41af191b8378c9145bbed342bd41ed2b, type: 3}

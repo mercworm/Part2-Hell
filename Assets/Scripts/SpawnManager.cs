@@ -15,6 +15,7 @@ public class SpawnManager : MonoBehaviour {
     private bool handsCheck = false;
     private bool blobCheck = false;
     private bool cogCheck = false;
+    private bool acidCheck = true;
 
     private void Start()
     {
@@ -120,7 +121,10 @@ public class SpawnManager : MonoBehaviour {
 
         InvokeRepeating("NippleSpawn", 0f, Random.Range(nipple.minTime, nipple.maxTime));
 
-        InvokeRepeating("AcidSpawn", 0f, 60f);
+        if (acidCheck)
+        {
+            Invoke("AcidSpawn", 0f);
+        }
     }
 
     public void BubbleSpawn ()
@@ -166,6 +170,7 @@ public class SpawnManager : MonoBehaviour {
 
     public void AcidSpawn ()
     {
+        acidCheck = false;
         Vector3 spawn = new Vector3(0f, -60f, 0f);
 
         Instantiate(acidObj, spawn, Quaternion.identity);
