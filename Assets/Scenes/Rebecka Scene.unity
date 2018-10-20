@@ -2763,7 +2763,8 @@ MonoBehaviour:
   bubbleFizz: {fileID: 8300000, guid: 764f3eb4a1f880a4491e716c60d5225e, type: 3}
   sizzle: {fileID: 8300000, guid: 5352165f482e3d94fad1c0e5ac8ea9cd, type: 3}
   splat: {fileID: 8300000, guid: 520cd8219ede9b645b1c3316fea58b70, type: 3}
-  pop: {fileID: 8300000, guid: 41af191b8378c9145bbed342bd41ed2b, type: 3}
+  pop: {fileID: 8300000, guid: 25564ef8c3aac4848878133ba4f3f054, type: 3}
+  mouth: {fileID: 8300000, guid: 9dd4459d0996e374c9c7bf00f1453543, type: 3}
 --- !u!82 &1406726431
 AudioSource:
   m_ObjectHideFlags: 0

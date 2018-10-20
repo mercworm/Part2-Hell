@@ -41,5 +41,6 @@ public class MouthManager : MonoBehaviour
         //closeParticles.Play();
         //trigger a screenshake
         EventManager.TriggerEvent("ShakeOn");
+        EventManager.TriggerEvent("MouthClose");
     }
 }
