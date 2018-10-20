@@ -5,10 +5,10 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour {
 
     public ObjectTypes bubble, nipple;
-    public ObjectTypes[] eye, hands, blob, cog;
+    public ObjectTypes[] eye, hands, blob, cog, dog;
     public GameObject acidObj;
 
-    public Transform eyeSpawnPointLeft, eyeSpawnPointRight, handSpawnLeft, handSpawnRight;
+    public Transform eyeSpawnPointLeft, eyeSpawnPointRight, handSpawnLeft, handSpawnRight, dogSpawnLeft, dogSpawnRight;
 
     private float countdown; //this is an ugly fix, but what can you do.
 
@@ -16,6 +16,7 @@ public class SpawnManager : MonoBehaviour {
     private bool blobCheck = false;
     private bool cogCheck = false;
     private bool acidCheck = true;
+    private bool dogCheck = false;
 
     private void Start()
     {
@@ -35,6 +36,7 @@ public class SpawnManager : MonoBehaviour {
             if (handsCheck) Invoke("HandSpawnStart", 0f);
             if (blobCheck) Invoke("StartBlobSpawn", 0f);
             if (cogCheck) Invoke("StartCogSpawn", 0f);
+            if (dogCheck) Invoke("DogSpawnStart", 0f);
         }
     }
 
@@ -174,5 +176,32 @@ public class SpawnManager : MonoBehaviour {
         Vector3 spawn = new Vector3(0f, -60f, 0f);
 
         Instantiate(acidObj, spawn, Quaternion.identity);
+    }
+
+
+    //same stuff again, but this time for the dogs.
+    public void DogSpawnStart ()
+    {
+        InvokeRepeating("DogSpawn", 0f, Random.Range(dog[0].minTime, dog[0].maxTime));
+        dogCheck = true;
+    }
+
+    public void DogSpawn ()
+    {
+        var dogRotation = Random.Range(0, dog.Length);
+        if (dog[dogRotation].left)
+        {
+            Instantiate(dog[dogRotation].objectPrefab[0], dogSpawnLeft);
+        }
+        else
+        {
+            Instantiate(dog[dogRotation].objectPrefab[0], dogSpawnRight);
+        }
+    }
+
+    public void DogSpawnStop ()
+    {
+        dogCheck = false;
+        CancelInvoke("DogSpawn");
     }
 }
