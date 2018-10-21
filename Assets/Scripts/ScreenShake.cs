@@ -12,7 +12,7 @@ public class ScreenShake : MonoBehaviour {
     public Vector3 origPos;
 
     public PostProcessingBehaviour postScript;
-    public PostProcessingProfile shake, normal;
+    public PostProcessingProfile shake, normal, sketch;
 
     private bool mouthShake = false;
     public float shakeDuration;
@@ -79,5 +79,15 @@ public class ScreenShake : MonoBehaviour {
     {
         shakeDuration = .2f;
         mouthShake = true;
+    }
+
+    public void SketchPostEffectOn ()
+    {
+        postScript.profile = sketch;
+    }
+
+    public void SketchPostEffectOff ()
+    {
+        postScript.profile = normal;
     }
 }
