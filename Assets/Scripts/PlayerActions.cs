@@ -89,11 +89,14 @@ public class PlayerActions : MonoBehaviour {
         if(other.gameObject.CompareTag("Hands"))
         {
             EventManager.TriggerEvent("ShakeOn");
+            EventManager.TriggerEvent("HandsScream");
         }
 
         if(other.gameObject.CompareTag("Ass"))
         {
             spriteRend.sortingOrder = 15;
+            var collider = GetComponent<PolygonCollider2D>();
+            collider.enabled = false;
         }
     }
 
@@ -117,6 +120,7 @@ public class PlayerActions : MonoBehaviour {
         if (other.gameObject.CompareTag("Hands"))
         {
             EventManager.TriggerEvent("ShakeOff");
+            EventManager.TriggerEvent("HandsScream");
         }
     }
 

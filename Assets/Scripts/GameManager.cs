@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
     public BeatEvents OnHeart;
     public BeatEvents OnMouth;
     public BeatEvents OnAcid;
+    public BeatEvents OnSketchStart;
 
     private bool intensity = true;
     public static bool sketch = false;
@@ -84,6 +85,7 @@ public class GameManager : MonoBehaviour {
         {
             StopAllCoroutines();
             StartCoroutine(Transition("SwitchToSketch"));
+            OnSketchStart.Invoke();
             sketch = true;
             testSketch = true;
         }

@@ -24,13 +24,13 @@ public class SketchSwitch : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-		if (GameManager.sketch && !switchDone)
+    void Update() {
+        if (GameManager.sketch && !switchDone)
         {
             Switch();
             switchDone = true;
         }
-	}
+    }
 
     public void Switch()
     {
@@ -38,6 +38,12 @@ public class SketchSwitch : MonoBehaviour {
         {
             bubbleSpriteRend.sprite = bubbleSketch;
             bubbleSpriteRend.color = sketchColor;
+        }
+        else if (gameObject.tag == "Acid")
+        {
+            bubbleSpriteRend.color = sketchColor;
+            sketchVersion.SetActive(true);
+            normalVersion.SetActive(false);
         }
         else
         {
@@ -52,6 +58,12 @@ public class SketchSwitch : MonoBehaviour {
         {
             bubbleSpriteRend.sprite = bubbleOrig;
             bubbleSpriteRend.color = origColor;
+        }
+        else if(gameObject.tag == "Acid")
+        {
+            bubbleSpriteRend.color = origColor;
+            sketchVersion.SetActive(false);
+            normalVersion.SetActive(true);
         }
         else
         {

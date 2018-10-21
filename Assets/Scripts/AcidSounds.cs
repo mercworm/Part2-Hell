@@ -5,7 +5,9 @@ using UnityEngine;
 public class AcidSounds : MonoBehaviour {
 
     public AudioSource playSource, normalSource, muffledSource;
-    public AudioClip bubbleFizz, sizzle, splat, pop, mouth;
+    public AudioClip bubbleFizz, sizzle, splat, pop, mouth, hands;
+
+    private bool scream = true;
 
     private void OnEnable()
     {
@@ -14,6 +16,7 @@ public class AcidSounds : MonoBehaviour {
         EventManager.StartListening("SplatSound", Splat);
         EventManager.StartListening("BubblePop", Pop);
         EventManager.StartListening("MouthClose", MouthSound);
+        EventManager.StartListening("HandsScream", Hands);
     }
 
     public void SoundsGo ()
@@ -48,5 +51,20 @@ public class AcidSounds : MonoBehaviour {
     public void MouthSound ()
     {
         playSource.PlayOneShot(mouth);
+    }
+
+    public void Hands ()
+    {
+        if(scream)
+        {
+            scream = false;
+            playSource.clip = hands;
+            playSource.Play();
+        }
+        else
+        {
+            scream = true;
+            playSource.Stop();
+        }
     }
 }
