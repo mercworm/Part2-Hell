@@ -58,13 +58,20 @@ public class AcidSounds : MonoBehaviour {
         if(scream)
         {
             scream = false;
-            playSource.clip = hands;
-            playSource.Play();
+            if (playSource.clip != hands)
+            {
+                playSource.clip = hands;
+                playSource.Play();
+            }
+            else
+            {
+                playSource.volume = 1;
+            }
         }
         else
         {
             scream = true;
-            playSource.Stop();
+            playSource.volume = 0;
         }
     }
 }

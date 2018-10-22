@@ -38,7 +38,7 @@ public class MouthManager : MonoBehaviour
         mouthClosed.SetActive(true);
         mouthOpen.SetActive(false);
 
-        //closeParticles.Play();
+        closeParticles.Play();
         //trigger a screenshake
         EventManager.TriggerEvent("ShakeOn");
         EventManager.TriggerEvent("MouthClose");

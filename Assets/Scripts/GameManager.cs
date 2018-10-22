@@ -140,7 +140,9 @@ public class GameManager : MonoBehaviour {
     {
         blackscreen.SetActive(true);
         yield return new WaitForSeconds(2);
-        UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
+        //uncomment this when we have finished the end animation.
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("EndScene");
+        Application.Quit();
     }
 
     public IEnumerator Transition (string triggerName)
