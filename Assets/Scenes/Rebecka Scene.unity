@@ -2525,7 +2525,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 19a11517b8a3f4342a047caa1464bb60, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dde0a3bc9184dc241a0468d4e404c4b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2955,6 +2955,7 @@ MonoBehaviour:
   pop: {fileID: 8300000, guid: 208ba9ef2d7d3fe4da66af4b9b4bbbad, type: 3}
   mouth: {fileID: 8300000, guid: 9dd4459d0996e374c9c7bf00f1453543, type: 3}
   hands: {fileID: 8300000, guid: 598db0c046e23e140b30f78572a43679, type: 3}
+  splash: {fileID: 8300000, guid: e914220aad20200449500f9a77c5c11b, type: 3}
 --- !u!82 &2130416875
 AudioSource:
   m_ObjectHideFlags: 0
