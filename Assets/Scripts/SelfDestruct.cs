@@ -6,13 +6,13 @@ public class SelfDestruct : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Acid") || other.gameObject.CompareTag("KillZone") || other.gameObject.CompareTag("Heart"))
+        if (gameObject.tag == "Tooth")
         {
-            if(gameObject.tag == "Tooth")
-            {
-                StartCoroutine(ToothDeath());
-            }
-            else Destroy(gameObject);
+            if(other.gameObject.CompareTag("Acid") || other.gameObject.CompareTag("KillZone")) StartCoroutine(ToothDeath());
+        }
+        else
+        {
+            if (other.gameObject.CompareTag("Acid") || other.gameObject.CompareTag("KillZone") || other.gameObject.CompareTag("Heart")) Destroy(gameObject);
         }
     }
 
